@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #screen {
+        height: 40px;
+        width: 290px;
+        background-color: grey;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      #cal {
+        background-color: antiquewhite;
+        height: 420px;
+        width: 280px;
+        padding: 20px;
+        margin: 0;
+        border-radius: 20px;
+      }
+
+      button {
+        height: 60px;
+        width: 60px;
+        background-color: aquamarine;
+        border-radius: 10px;
+        margin: 2px;
+        box-shadow: 2px 2px 7px;
+        background-color: transparent;
+        color: black;
+        font-weight: 600;
+        font-size: 20px;
+      }
+      #si {
+        width: 120px;
+      }
+      button:hover {
+        background-color: chocolate;
+      }
+      #display{
+            height: 40px;
+            width: 250px;
+            background-color: white;
+            margin: 20px;
+            margin-left: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 2px 5px;
+            font-weight: 600;
+            font-size: 25px;
+            text-align: right;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <div id="container">
+      <div id="cal">
+        <div id="calculator">
+            <input id="display" readonly /></div>
+
+        <button onclick="cleardisplay('ac')" id="0">AC</button>
+        <!-- <button onclick="cleardisplay('CE')" id="1">C</button> -->
+        <button onclick="demo('')"id="2">DE</button>
+        <button onclick="addvalue('%')"id="3">%</button>
+        <button onclick="addvalue('/')"id="4">/</button>
+        <button onclick="addvalue('7')"id="5">7</button>
+        <button onclick="addvalue('8')"id="6">8</button>
+        <button onclick="addvalue('9')"id="7">9</button>
+        <button onclick="addvalue('*')"id="8">*</button>
+        <button onclick="addvalue('4')"id="9">4</button>
+        <button onclick="addvalue('5')"id="10">5</button>
+        <button onclick="addvalue('6')"id="11">6</button>
+        <button onclick="addvalue('-')" id="12">-</button>
+        <button onclick="addvalue('1')"id="13">1</button>
+        <button onclick="addvalue('2')"id="14">2</button>
+        <button onclick="addvalue('3')"id="15">3</button>
+        <button onclick="addvalue('+')"id="16">+</button>
+        <button onclick="addvalue('0')" id="17">0</button>
+        <button onclick="addvalue('.')" id="18">.</button>
+        <button id="si" onclick="helo('=')">=</button>
+        
+
+      </div>
+    </div>
+    <script>
+      display=document.getElementById("display");
+      shiva=document.getElementById("shiva");
+      function addvalue(x){
+        display.value+=x;
+      }
+      function helo () {
+        try{
+            display.value=eval(display.value);
+        }
+        catch{
+            display.value='error'
+        }
+      }
+      function cleardisplay(){
+        display.value="";
+      }
+      function demo(){
+        display.value=display.value.slice(0, -1);
+      }
+
+
+    </script>
+  </body>
+</html>
